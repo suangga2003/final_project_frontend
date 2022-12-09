@@ -1,6 +1,7 @@
-import axios from 'axios';
-import Cookies from 'js-cookie';
-import { get, post } from '../helpers/api';
+// import axios from 'axios';
+// import Cookies from 'js-cookie';
+// import { get, post } from '../helpers/api';
+import { get } from '../helpers/api';
 
 const getAllJenisCuti = async () => {
   const response = await get(`jenisCuti`);
