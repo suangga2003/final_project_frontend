@@ -1,3 +1,21 @@
+// import {
+//   Flex,
+//   Box,
+//   FormControl,
+//   FormLabel,
+//   Input,
+//   Checkbox,
+//   Stack,
+//   Link,
+//   Button,
+//   Heading,
+//   Text,
+//   useColorModeValue,
+//   Alert,
+//   AlertIcon,
+//   AlertTitle,
+//   AlertDescription,
+// } from "@chakra-ui/react";
 import {
   Flex,
   Box,
@@ -10,19 +28,16 @@ import {
   Button,
   Heading,
   Text,
-  useColorModeValue,
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
+  useColorModeValue
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useToast } from "@chakra-ui/react";
-import { Link as RouterLink, redirect, useNavigate } from "react-router-dom";
-import axios from "axios";
+// import { Link as RouterLink, redirect, useNavigate } from "react-router-dom";
+import { Link as useNavigate } from "react-router-dom";
+// import axios from "axios";
 import { login } from "../services/authService";
 import { useEffect, useState } from "react";
-import { GoogleLogin, useGoogleLogout } from "react-google-login";
+// import { GoogleLogin, useGoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import LoginGoogle from "../components/LoginGoogle";
 import useGlobal from "../store/global";
@@ -36,13 +51,12 @@ export default function Login() {
   const setGoogleMail = useGlobal((state) => state.setGoogleMail);
   const {
     handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
+    register
   } = useForm();
-  const { signOut } = useGoogleLogout({
-    clientId,
-    onLogoutSuccess: () => alert("Logout made successfully"),
-  });
+  // const { signOut } = useGoogleLogout({
+  //   clientId,
+  //   onLogoutSuccess: () => alert("Logout made successfully"),
+  // });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const toast = useToast({
@@ -80,7 +94,7 @@ export default function Login() {
       // signOut();
       setGoogleMail(null);
     }
-  }, []);
+  });
 
   useEffect(() => {
     function start() {

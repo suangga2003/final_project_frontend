@@ -17,18 +17,18 @@ import {
   HStack,
   VStack,
   MenuList,
-  useColorModeValue,
+  // useColorModeValue,
   MenuItem,
   MenuDivider,
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Card,
+  // AccordionIcon,
+  // Breadcrumb,
+  // BreadcrumbItem,
+  // BreadcrumbLink,
+  // Card,
   Badge,
   Popover,
   PopoverTrigger,
@@ -37,45 +37,47 @@ import {
   PopoverCloseButton,
   PopoverHeader,
   PopoverBody,
-  Button,
-  CardBody,
-  CardHeader,
-  Heading,
+  // Button,
+  // CardBody,
+  // CardHeader,
+  // Heading,
   Stack,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { MdHome } from "react-icons/md";
 import {
-  FaRss,
-  FaClipboardCheck,
+  // FaRss,
+  // FaClipboardCheck,
   FaBell,
-  FaCar,
+  // FaCar,
   FaPlaneDeparture,
   FaPencilAlt,
-  FaUserCircle,
+  // FaUserCircle,
   FaUserAlt,
 } from "react-icons/fa";
-import { HiCollection, HiCode } from "react-icons/hi";
-import { AiFillGift } from "react-icons/ai";
+// import { HiCollection, HiCode } from "react-icons/hi";
+// import { AiFillGift } from "react-icons/ai";
 import {
-  BsGearFill,
-  BsFillPeopleFill,
+  // BsGearFill,
+  // BsFillPeopleFill,
   BsBriefcaseFill,
   BsFillInboxFill,
   BsFillCalendar2EventFill,
   BsCalendarWeekFill,
-  BsFillCalendar2CheckFill,
+  // BsFillCalendar2CheckFill,
   BsFillClockFill,
 } from "react-icons/bs";
-import { FiChevronDown, FiMenu, FiSearch, FiInbox } from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiSearch, 
+  // FiInbox 
+} from "react-icons/fi";
 import { logout } from "../../services/authService";
 import useGlobal from "../../store/global";
 import {
   getAllTrxCuti,
   getTrxCutiByUserId,
 } from "../../services/trxCutiService";
-import is from "date-fns/esm/locale/is/index.js";
+// import is from "date-fns/esm/locale/is/index.js";
 import { checkToken } from "../../helpers/session";
 
 const employeeNav = [
@@ -197,7 +199,7 @@ const Layout = ({ children }) => {
     } else {
       navigate("/login");
     }
-  }, []);
+  });
 
   useEffect(() => {
     console.log(session?.role);
@@ -205,13 +207,13 @@ const Layout = ({ children }) => {
       if (session?.role.toLowerCase() === "user") {
         const { data } = await getTrxCutiByUserId(session.userid);
         const filteredData = data.filter(
-          (item) => item.status == "2" || item.status == "3"
+          (item) => item.status === "2" || item.status === "3"
         );
         // console.log(filteredData);
         setListCuti(filteredData);
       } else {
         const { data } = await getAllTrxCuti();
-        const filteredData = data.filter((item) => item.status == "1");
+        const filteredData = data.filter((item) => item.status === "1");
         // console.log(filteredData);
         setListCuti(filteredData);
       }

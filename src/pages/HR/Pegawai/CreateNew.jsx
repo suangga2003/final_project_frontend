@@ -9,7 +9,6 @@ import {
   Td,
   Tr,
   useToast,
-  h1,
 } from "@chakra-ui/react";
 import { SingleDatepicker } from "chakra-dayzed-datepicker";
 import React, { useEffect, useState } from "react";
@@ -49,12 +48,11 @@ const CreateNewPegawai = () => {
     getAllKota().then((res) => setListKota(res.data));
     getAllKecamatan().then((res) => setListKecamatan(res.data));
     getAllKelurahan().then((res) => setListKelurahan(res.data));
-  }, []);
+  });
 
   const {
     handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
+    register
   } = useForm();
   const toast = useToast({
     position: "top",

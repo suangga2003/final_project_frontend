@@ -9,7 +9,6 @@ import {
   TableContainer,
   Tbody,
   Td,
-  Text,
   Textarea,
   Tr,
   useToast,
@@ -36,7 +35,7 @@ const Approval = () => {
       console.log(res.data);
       setDetail(res.data);
     });
-  }, []);
+  });
 
   const handleChange = (event) => {
     const value = event.target.value;

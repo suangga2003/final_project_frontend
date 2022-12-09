@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../../../components/Dashboard/Layout';
 import { getAllJenisCuti } from '../../../services/jenisCutiService';
-import { insertTrxCuti, getAllTrxCuti, getTrxCutiById, updateTrxCuti } from '../../../services/trxCutiService';
+// import { insertTrxCuti, getAllTrxCuti, getTrxCutiById, updateTrxCuti } from '../../../services/trxCutiService';
+import { insertTrxCuti } from '../../../services/trxCutiService';
 import useGlobal from '../../../store/global';
 
 const CreateNew = () => {
@@ -15,10 +16,14 @@ const CreateNew = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [durasiCuti, setDurasiCuti] = useState(0);
   const [jenisCuti, setJenisCuti] = useState([]);
+  // const {
+  //   handleSubmit,
+  //   register,
+  //   formState: { errors, isSubmitting },
+  // } = useForm();
   const {
     handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
+    register
   } = useForm();
   const toast = useToast({
     position: 'top',

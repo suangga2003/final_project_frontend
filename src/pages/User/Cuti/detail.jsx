@@ -1,3 +1,19 @@
+// import {
+//   Button,
+//   Card,
+//   CardBody,
+//   Flex,
+//   Heading,
+//   Spacer,
+//   Table,
+//   TableContainer,
+//   Tbody,
+//   Td,
+//   Text,
+//   Textarea,
+//   Tr,
+//   useToast,
+// } from "@chakra-ui/react";
 import {
   Button,
   Card,
@@ -9,17 +25,14 @@ import {
   TableContainer,
   Tbody,
   Td,
-  Text,
-  Textarea,
   Tr,
-  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Layout from "../../../components/Dashboard/Layout";
 import { getTrxCutiDetail } from "../../../services/trxCutiService";
-import useGlobal from "../../../store/global";
+// import useGlobal from "../../../store/global";
 
 const status = {
   1: "Menunggu Persetujuan",
@@ -29,13 +42,13 @@ const status = {
 };
 
 const DetailCuti = () => {
-  const session = useGlobal((state) => state.session);
+  // const session = useGlobal((state) => state.session);
   let { cutiId } = useParams();
   const [detail, setDetail] = useState({});
-  const [catatan, setCatatan] = useState(null);
-  const toast = useToast({
-    position: "top",
-  });
+  // const [catatan, setCatatan] = useState(null);
+  // const toast = useToast({
+  //   position: "top",
+  // });
 
   const navigate = useNavigate();
 
@@ -47,10 +60,10 @@ const DetailCuti = () => {
     });
   }, [cutiId]);
 
-  const handleChange = (event) => {
-    const value = event.target.value;
-    setCatatan(value);
-  };
+  // const handleChange = (event) => {
+  //   const value = event.target.value;
+  //   setCatatan(value);
+  // };
 
   return (
     <Layout>

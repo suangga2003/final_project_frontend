@@ -1,6 +1,7 @@
 // import axios from "axios";
 // import Cookies from "js-cookie";
-import { get, post } from "../helpers/api";
+// import { get, post } from "../helpers/api";
+import { get } from "../helpers/api";
 
 const getAllAgama = async () => {
   const response = await get(`master/agama`);

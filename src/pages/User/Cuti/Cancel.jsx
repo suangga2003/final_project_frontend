@@ -1,3 +1,19 @@
+// import {
+//   Button,
+//   Card,
+//   CardBody,
+//   Flex,
+//   Heading,
+//   Spacer,
+//   Table,
+//   TableContainer,
+//   Tbody,
+//   Td,
+//   Text,
+//   Textarea,
+//   Tr,
+//   useToast,
+// } from '@chakra-ui/react';
 import {
   Button,
   Card,
@@ -9,7 +25,6 @@ import {
   TableContainer,
   Tbody,
   Td,
-  Text,
   Textarea,
   Tr,
   useToast,
@@ -20,10 +35,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Layout from '../../../components/Dashboard/Layout';
 import { getTrxCutiDetail } from '../../../services/trxCutiService';
 import { cancelCuti } from '../../../services/trxCutiService';
-import useGlobal from '../../../store/global';
+// import useGlobal from '../../../store/global';
 
 const Cancel = () => {
-  const session = useGlobal((state) => state.session);
+  // const session = useGlobal((state) => state.session);
   let { cutiId } = useParams();
   const [detail, setDetail] = useState({});
   const [catatan, setCatatan] = useState(null);
@@ -36,7 +51,7 @@ const Cancel = () => {
       console.log(res.data);
       setDetail(res.data);
     });
-  }, []);
+  });
 
   const handleChange = (event) => {
     const value = event.target.value;

@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp } from 'react-icons/io5';
-import { ReactElement } from 'react';
+// import { ReactElement } from 'react';
 
 const Feature = ({ text, icon, iconBg }) => {
   return (

@@ -4,9 +4,9 @@ import {
     FormControl,
     FormLabel,
     Input,
-    InputGroup,
-    HStack,
-    InputRightElement,
+    // InputGroup,
+    // HStack,
+    // InputRightElement,
     Stack,
     Button,
     Heading,
@@ -16,7 +16,7 @@ import {
     useToast,
   } from "@chakra-ui/react";
   import { useState } from "react";
-  import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+  // import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
   import { useForm } from "react-hook-form";
   // import { register as wadaw } from "../services/authService";
   import { forgotPassword } from "../services/authService";
@@ -26,15 +26,15 @@ import {
     const {
       handleSubmit,
       register,
-      watch,
-      formState: { errors, isSubmitting },
+      // watch,
+      // formState: { errors, isSubmitting },
     } = useForm();
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const toast = useToast({
       position: "top",
     });
-    const [showPassword, setShowPassword] = useState(false);
+    // const [showPassword, setShowPassword] = useState(false);
   
     const handleResetPassword = async (values) => {
       setLoading(true);

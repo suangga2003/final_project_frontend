@@ -1,13 +1,13 @@
 import {
   Heading,
   Table,
-  TableCaption,
+  // TableCaption,
   TableContainer,
   Tbody,
   Td,
-  Tfoot,
-  Th,
-  Thead,
+  // Tfoot,
+  // Th,
+  // Thead,
   Tr,
 } from "@chakra-ui/react";
 import React from "react";
@@ -33,7 +33,7 @@ const Employee = () => {
       //console.log(res.data);
       setDetail(res.data[0]);
     });
-  }, []);
+  });
 
   return (
     <Layout>
